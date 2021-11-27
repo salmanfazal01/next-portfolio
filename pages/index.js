@@ -1,3 +1,4 @@
+import { Paper, useTheme } from "@mui/material";
 import React from "react";
 import Section1 from "../src/containers/Section1";
 import Section2 from "../src/containers/Section2";
@@ -6,6 +7,10 @@ import Section4 from "../src/containers/Section4";
 import Section5 from "../src/containers/Section5";
 
 const Home = () => {
+  const theme = useTheme();
+
+  console.log(theme);
+
   return (
     <div>
       <Section1 />
