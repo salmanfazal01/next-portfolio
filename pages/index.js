@@ -9,8 +9,6 @@ import Section5 from "../src/containers/Section5";
 const Home = () => {
   const theme = useTheme();
 
-  console.log(theme);
-
   return (
     <div>
       <Section1 />
