@@ -9,11 +9,18 @@ const typography = {
   },
 };
 
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 1034,
+    lg: 1200,
+    xl: 1536,
+  },
+};
+
 export const themeCreator = (t) => {
-  return {
-    typography,
-    ...theme[t],
-  };
+  return { breakpoints, typography, ...theme[t] };
 };
 
 const theme = {

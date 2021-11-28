@@ -14,7 +14,7 @@ const Section2 = () => {
 
   const CounterCard = ({ number, text }) => {
     return (
-      <Stack container spacing={2} direction="row" alignItems="flex-end">
+      <Stack spacing={2} direction="row" alignItems="flex-end">
         <Typography
           variant="h2"
           sx={{ color: theme.palette.primary.yellow, fontWeight: 600 }}
@@ -30,13 +30,12 @@ const Section2 = () => {
   return (
     <Box
       sx={{
+        boxSizing: "unset",
         backgroundColor: theme.palette.background.gray2,
-        [theme.breakpoints.down("sm")]: {
-          padding: theme.spacing(7, 3),
-        },
+        padding: theme.spacing(7, 3),
         [theme.breakpoints.up("md")]: {
           minHeight: "70vh",
-          paddingTop: theme.spacing(12),
+          pt: 12,
         },
       }}
     >
@@ -57,7 +56,7 @@ const Section2 = () => {
               subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Simply dummy text of the printing and typesetting"
               subtitleMaxWidth={350}
             >
-              <Grid container spacing={7}>
+              <Grid container spacing={{ md: 3, lg: 7 }}>
                 <Grid item>
                   <CounterCard number={14} text="Years of Experience." />
                 </Grid>

@@ -133,14 +133,16 @@ const Section1 = () => {
 
           {/* Right side */}
           <Grid item xs={12} md={6}>
-            <SectionText
-              header="Introduction"
-              title="Product Designer and Developer, based in California"
-              subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"
-              button="My story"
-              rightAlign
-              maxWidth={350}
-            />
+            <LightSpeed right>
+              <SectionText
+                header="Introduction"
+                title="Product Designer and Developer, based in California"
+                subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy"
+                button="My story"
+                rightAlign
+                maxWidth={350}
+              />
+            </LightSpeed>
           </Grid>
         </Grid>
       </Container>
