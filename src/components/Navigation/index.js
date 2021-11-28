@@ -1,19 +1,23 @@
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
+  alpha,
   Hidden,
   IconButton,
   Menu,
   MenuItem,
   Stack,
-  alpha,
   Typography,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import { minWidth } from "@mui/system";
+
+import Slide from "react-reveal/Slide";
+import Rotate from "react-reveal/Rotate";
 
 const Navigation = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -23,7 +27,7 @@ const Navigation = () => {
     if (!active) {
       return (
         <Typography
-          sx={(theme) => ({
+          sx={{
             letterSpacing: "0.7px",
             color: theme.palette.primary.disabled,
             fontSize: "26px",
@@ -32,7 +36,7 @@ const Navigation = () => {
             "&:hover": {
               color: theme.palette.primary.contrastText,
             },
-          })}
+          }}
         >
           {children}
         </Typography>
@@ -40,7 +44,7 @@ const Navigation = () => {
     } else {
       return (
         <Typography
-          sx={(theme) => ({
+          sx={{
             letterSpacing: "1px",
             fontSize: "26px",
             fontWeight: 600,
@@ -54,7 +58,7 @@ const Navigation = () => {
               marginTop: "2px",
               borderBottom: `5px dotted ${theme.palette.primary.yellow}`,
             },
-          })}
+          }}
         >
           {children}
         </Typography>
@@ -67,13 +71,13 @@ const Navigation = () => {
       return (
         <MenuItem
           onClick={handleClose}
-          sx={(theme) => ({
+          sx={{
             minWidth: 100,
             backgroundColor: alpha(
               theme.palette.primary.main,
               theme.palette.action.selectedOpacity
             ),
-          })}
+          }}
         >
           {children}
         </MenuItem>
@@ -95,26 +99,32 @@ const Navigation = () => {
         alignItems="center"
         justifyContent="space-between"
       >
-        <EmojiEmotionsIcon
-          sx={(theme) => ({
-            color: theme.palette.primary.yellow,
-            fontSize: "3rem",
-            cursor: "pointer",
-          })}
-        />
+        <Rotate>
+          <EmojiEmotionsIcon
+            sx={{
+              color: theme.palette.primary.yellow,
+              fontSize: "3rem",
+              cursor: "pointer",
+            }}
+          />
+        </Rotate>
 
         <Hidden smDown>
-          <Stack direction="row" spacing={2}>
-            <Button active>Services</Button>
-            <Button>Works</Button>
-            <Button>Blog</Button>
-          </Stack>
+          <Slide right>
+            <Stack direction="row" spacing={2}>
+              <Button active>Services</Button>
+              <Button>Works</Button>
+              <Button>Blog</Button>
+            </Stack>
+          </Slide>
         </Hidden>
 
         <Hidden smUp>
-          <IconButton>
-            <MenuIcon onClick={(e) => setAnchorEl(e.currentTarget)} />
-          </IconButton>
+          <Slide right>
+            <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
+              <MenuIcon />
+            </IconButton>
+          </Slide>
         </Hidden>
       </Stack>
 
