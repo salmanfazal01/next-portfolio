@@ -98,10 +98,10 @@ const Section3 = () => {
               sx={{
                 minHeight: "200px",
                 backgroundColor: theme.palette.background.gray2,
-                margin: theme.spacing(5, 0),
+                my: 5,
                 [theme.breakpoints.up("md")]: {
                   minHeight: "600px",
-                  margin: theme.spacing(13, 0),
+                  my: 13,
                 },
               }}
             ></Box>
