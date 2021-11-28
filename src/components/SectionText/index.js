@@ -16,22 +16,22 @@ const SectionText = ({
 
   return (
     <Box
-      sx={ ({
+      sx={{
         maxWidth: maxWidth,
         [theme.breakpoints.up("md")]: {
           width: rightAlign && "60%",
           marginLeft: rightAlign && "auto",
         },
-      })}
+      }}
     >
       <Stack spacing={2}>
         {header && (
           <Typography
-            className={ ({
+            sx={{
               letterSpacing: "1px",
               color: theme.palette.primary.contrastText,
               fontWeight: 600,
-            })}
+            }}
           >
             &#x2015; {header}
           </Typography>
@@ -45,13 +45,13 @@ const SectionText = ({
 
         {subtitle && (
           <Typography
-            sx={ ({
+            sx={{
               letterSpacing: "0.1px",
               color: theme.palette.primary.contrastText,
               lineHeight: "2rem",
               pt: 1,
               maxWidth: subtitleMaxWidth,
-            })}
+            }}
           >
             {subtitle}
           </Typography>
@@ -60,18 +60,18 @@ const SectionText = ({
         {button && (
           <Button
             onClick={buttonOnClick}
-            sx={ ({
+            sx={{
               color: theme.palette.primary.yellow,
               fontSize: "18px",
               pt: 1,
-            })}
+            }}
           >
             {button} →
           </Button>
         )}
 
         {React.Children.count(children) ? (
-          <Box sx={ ({ pt: 1 })}>{children}</Box>
+          <Box sx={{ pt: 1 }}>{children}</Box>
         ) : null}
       </Stack>
     </Box>

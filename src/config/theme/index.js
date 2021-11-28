@@ -10,7 +10,10 @@ const typography = {
 };
 
 export const themeCreator = (t) => {
-  return { ...theme[t] };
+  return {
+    typography,
+    ...theme[t],
+  };
 };
 
 const theme = {
