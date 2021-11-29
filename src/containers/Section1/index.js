@@ -63,13 +63,14 @@ const Section1 = () => {
           container
           spacing={8}
           sx={{
-            position: "relative",
             zIndex: "999",
             pt: 5,
             [theme.breakpoints.up("md")]: {
+              position: "relative",
               pt: 10,
             },
             [theme.breakpoints.up("lg")]: {
+              position: "relative",
               pt: 16,
             },
           }}

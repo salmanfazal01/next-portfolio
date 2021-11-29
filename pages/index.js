@@ -1,5 +1,6 @@
-import { Paper, useTheme } from "@mui/material";
+import { useTheme, Box } from "@mui/material";
 import React from "react";
+import ScrollToTop from "../src/components/ScrollToTop";
 import Section1 from "../src/containers/Section1";
 import Section2 from "../src/containers/Section2";
 import Section3 from "../src/containers/Section3";
@@ -10,13 +11,15 @@ const Home = () => {
   const theme = useTheme();
 
   return (
-    <div>
+    <Box sx={{ maxWidth: "100vw", overflowX: "hidden" }}>
       <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />
       <Section5 />
-    </div>
+
+      <ScrollToTop />
+    </Box>
   );
 };
 
