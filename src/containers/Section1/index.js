@@ -1,24 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
+import { Facebook, LinkedIn, Twitter } from "@mui/icons-material";
 import {
-  Container,
-  Typography,
   Box,
-  Hidden,
+  Container,
   Grid,
-  Stack,
+  Hidden,
   IconButton,
+  Stack,
   useTheme,
 } from "@mui/material";
 import React from "react";
-import Navigation from "../../components/Navigation";
-import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
-import LightSpeed from "react-reveal/LightSpeed";
 import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
+import LightSpeed from "react-reveal/LightSpeed";
+import Zoom from "react-reveal/Zoom";
 import Person from "../../assets/person.png";
-import { Facebook, LinkedIn, Twitter } from "@mui/icons-material";
-import SectionText from "../../components/SectionText";
+import Navigation from "../../components/Navigation";
 import ResponsiveText from "../../components/ResponsiveText";
+import SectionText from "../../components/SectionText";
 
 const Section1 = () => {
   const theme = useTheme();
@@ -108,25 +107,19 @@ const Section1 = () => {
 
               {/* Socials */}
               <Fade bottom>
-                <Grid container spacing={1}>
-                  <Grid item>
-                    <IconButton>
-                      <LinkedIn />
-                    </IconButton>
-                  </Grid>
+                <Stack spacing={1} direction="row" alignItems="center">
+                  <IconButton>
+                    <LinkedIn />
+                  </IconButton>
 
-                  <Grid item>
-                    <IconButton>
-                      <Facebook />
-                    </IconButton>
-                  </Grid>
+                  <IconButton>
+                    <Facebook />
+                  </IconButton>
 
-                  <Grid item>
-                    <IconButton>
-                      <Twitter />
-                    </IconButton>
-                  </Grid>
-                </Grid>
+                  <IconButton>
+                    <Twitter />
+                  </IconButton>
+                </Stack>
               </Fade>
             </Stack>
           </Grid>

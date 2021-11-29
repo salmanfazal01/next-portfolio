@@ -11,9 +11,8 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
-
-import Slide from "react-reveal/Slide";
 import Rotate from "react-reveal/Rotate";
+import Slide from "react-reveal/Slide";
 
 const Navigation = () => {
   const [anchorEl, setAnchorEl] = useState(null);
